@@ -7,7 +7,7 @@ class AppColors {
   static const Color surfaceContainerLowest = Color(0xFFFFFFFF);
   static const Color surfaceContainerLow = Color(0xFFF2F4F4);
   static const Color surfaceContainerHigh = Color(0xFFE4E9EA);
-  
+
   // Primary (from gradient references #555f6f to #495363)
   static const Color primary = Color(0xFF555F6F);
   static const Color primaryDim = Color(0xFF495363);
@@ -19,9 +19,11 @@ class AppColors {
 
   // Ghost Border / Outline
   static const Color outlineVariant = Color(0xFFACB3B4);
-  
+
   // Text
   static const Color onSurface = Color(0xFF2D3435);
+
+  static Color? get outlineGhostBorder => null;
 }
 
 class AppTheme {
@@ -92,9 +94,9 @@ class AppTheme {
       ),
       textTheme: textTheme,
       // Ambient shadow defaults
-      cardTheme: const CardTheme(
+      cardTheme: const CardThemeData(
         color: AppColors.surfaceContainerLowest,
-        elevation: 0, 
+        elevation: 0,
         // Shadow will be layered by container color shifts mostly
         margin: EdgeInsets.all(0),
       ),
@@ -113,9 +115,7 @@ class AppTheme {
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.primary,
           side: const BorderSide(color: outlineGhostBorder),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
